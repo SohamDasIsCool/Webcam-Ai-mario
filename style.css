@@ -5,8 +5,16 @@
 .heading h3{
     display: inline;
 }
+.modal-dialog{
+    width:90%;
+}
 h3{
     margin-left: 480px;
+}
+#source{
+    background-color: #f3dede;
+    line-height: 2;
+    margin:0px;
 }
 .heading button{
     float:right;
@@ -17,4 +25,8 @@ h3{
 }
 #start,#status{
     font-size: 22px;
+}
+.instruction_image{
+    display:inline-block;
+    width:45%;
 }
