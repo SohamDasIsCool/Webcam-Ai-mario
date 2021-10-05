@@ -8,16 +8,13 @@
 .modal-dialog{
     width:90%;
 }
-h3{
-    margin-left: 480px;
-}
 #source{
     background-color: #f3dede;
     line-height: 2;
     margin:0px;
 }
 .heading button{
-    float:right;
+    float: right;
     border:2px solid white;
 }
 .big_img{
@@ -29,4 +26,10 @@ h3{
 .instruction_image{
     display:inline-block;
     width:45%;
+}
+video{
+    background: url('game_console.png');
+    background-size:cover;
+    background-position: center;
+    padding:25px;
 }
