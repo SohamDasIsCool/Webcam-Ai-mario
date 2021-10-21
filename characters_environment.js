@@ -220,6 +220,7 @@ function getCoins(coin,character){
   if( character.overlap(coin) && character.live && coin.get==false){
     character.coins+=1;
     coin.get=true;
+    mario_coin.play();
   };
 }
     
@@ -309,6 +310,7 @@ function manualControl(character){
 function jumping(character){
 	if( (noseY<200&&character.live) || (touchIsDown&&character.live) ){
 		character.velocity.y+=gameConfig.jump;
+    mario_jump.play();
 	}
 }
 
@@ -343,7 +345,7 @@ function standOnObjs(obj1,obj2){
 
 /* See if  obj1 step on obj2 to kill it*/
 function StepOnEnemy(obj1,obj2){
-  
+
 	var obj1_Left=leftSide(obj1);
 	var obj1_Right=rightSide(obj1);
 	var obj1_Up=upSide(obj1);
@@ -358,6 +360,7 @@ function StepOnEnemy(obj1,obj2){
 		obj2.live=false;
     obj1.killing=30;
     obj1.kills++;
+    mario_kick.play();
     if(obj1.velocity.y>=gameConfig.jump*0.8){
       obj1.velocity.y=gameConfig.jump*0.8;
     }else{
@@ -375,6 +378,9 @@ function die(character){
     character.status="dead";
     character.changeAnimation('dead');
     character.velocity.y-=2;
+    if(character.liveNumber>0){
+    mario_death.play();
+    }
 }
 
 // check character status and response to sprite and game status
@@ -385,7 +391,8 @@ function checkStatus(character){
     reviveAfterMusic(character);
   }
   if(character.live==false && character.liveNumber==0){
-    gameConfig.status="gameover"
+    gameConfig.status="gameover";
+    mario_gameOver.play();
   }
 
 }
